@@ -29,15 +29,31 @@ public_users.get('/',async function (req, res) { // Code to retrieve the list of
 
 
 // Get book details based on ISBN
-public_users.get('/isbn/:isbn',async function (req, res) { // Code to retrieve the book details 
-    var isbn = await req.params.isbn; 
-    var bookList = Object.values(books);
-    var book = bookList.find(function (book) { return book.isbn === isbn; });
+public_users.get('/isbn/:isbn', function (req, res) {
+  function findBook(isbn, bookList, callback) {
+    const book = bookList.find(book => book.isbn === isbn);
+    if (!book) {
+      callback(new Error('Book not found'));
+      return;
+    }
 
- 
-    // Display the book details 
-    return  res.send(JSON.stringify(book, null, 2)); });
- 
+    const response = JSON.stringify(book, null, 2);
+    process.nextTick(() => callback(null, response));
+  }
+
+  const isbn = req.params.isbn;
+  const bookList = Object.values(books);
+
+  findBook(isbn, bookList, (err, response) => {
+    if (err) {
+      console.error('Error retrieving book details:', err);
+      res.status(500).send('Error retrieving book details');
+      return;
+    }
+
+    res.send(response);
+  });
+});
 
  
     

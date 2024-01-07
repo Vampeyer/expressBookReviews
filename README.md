@@ -46,8 +46,10 @@ This can be done by ,  first  , opening up the terminal using vscodium , or a si
 ---------------------------------------------------------------------
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+task 10 . 
 Async Await functionality was built into the existing framework , and can be kept or removed in each endpoint , both achieving the desired result. 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 
 ----------------------------------------------------------------------
 - Authentication can also be found ,  short circuited , by using a get request  too  - http://localhost:5000/register

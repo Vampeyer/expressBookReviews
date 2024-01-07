@@ -15,7 +15,7 @@ let books = {
        "isbn" : "56" },
 
       4: {"author": "john1234brown","title": "TheEpicofGilgamesh", "reviews": {1 : " reviewed good  " } , "isbn": "99" },
-      5: {"author": "Unknown","title": "TheBookofJob", "reviews": {} },
+      5: {"author": "TheBible","title": "TheBookofJob", "reviews": {} },
       6: {"author": "Unknown","title": "One Thousand and One Nights", "reviews": {} },
       7: {"author": "Unknown","title": "Nj\u00e1l's Saga", "reviews": {} },
       8: {"author": "Jane Austen","title": "Pride and Prejudice", "reviews": {} },
